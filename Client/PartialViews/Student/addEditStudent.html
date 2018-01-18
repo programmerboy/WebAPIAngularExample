@@ -1,0 +1,113 @@
+﻿<div ng-controller="addEditStudentCtrl as vm">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>{{vm.title}}
+                <img src="/Content/images/loading.gif" alt="Loading..." ng-show="vm.isProcessing" id="loading-icon" />
+            </h2>
+
+            <form class="form-horizontal" name="addEditStudentForm" novalidate>
+                <div class="form-group" ng-class="{'has-error':addEditStudentForm.firstName.$invalid && addEditStudentForm.firstName.$dirty}">
+                    <label for="firstName" class="control-label col-md-2">First Name</label>
+                    <div class="col-md-5">
+                        <input type="text" id="firstName" name="firstName" ng-model="vm.student.firstName" class="form-control" required />
+                    </div>
+                    <span class="help-block has-error" ng-show="addEditStudentForm.firstName.$dirty">
+                        <span ng-show="addEditStudentForm.firstName.$error.required">First Name is required.</span>
+                    </span>
+                </div>
+                <div class="form-group" ng-class="{'has-error':addEditStudentForm.lastName.$invalid && addEditStudentForm.lastName.$dirty}">
+                    <label for="lastName" class="control-label col-md-2">Last Name</label>
+                    <div class="col-md-5">
+                        <input type="text" id="lastName" name="lastName" ng-model="vm.student.lastName" class="form-control" required />
+                    </div>
+                    <span class="help-block has-error" ng-show="addEditStudentForm.lastName.$dirty">
+                        <span ng-show="addEditStudentForm.lastName.$error.required">Last Name is required.</span>
+                    </span>
+                </div>
+                <div class="form-group" ng-class="{'has-error':addEditStudentForm.address.$invalid && addEditStudentForm.address.$dirty}">
+                    <label for="address" class="control-label col-md-2">Address</label>
+                    <div class="col-md-5">
+                        <input type="text" id="address" name="address" ng-model="vm.student.address" class="form-control" required />
+                    </div>
+                    <span class="help-block has-error" ng-show="addEditStudentForm.address.$dirty">
+                        <span ng-show="addEditStudentForm.address.$error.required">Address is required.</span>
+                    </span>
+                </div>
+                <div class="form-group" ng-class="{'has-error':addEditStudentForm.city.$invalid && addEditStudentForm.city.$dirty}">
+                    <label for="city" class="control-label col-md-2">City</label>
+                    <div class="col-md-5">
+                        <input type="text" id="city" name="city" ng-model="vm.student.city" class="form-control" required />
+                    </div>
+                    <span class="help-block has-error" ng-show="addEditStudentForm.city.$dirty">
+                        <span ng-show="addEditStudentForm.city.$error.required">City is required.</span>
+                    </span>
+                </div>
+                <div class="form-group" ng-class="{'has-error':addEditStudentForm.postalCode.$invalid && addEditStudentForm.postalCode.$dirty}">
+                    <label for="postalCode" class="control-label col-md-2">Postal Code</label>
+                    <div class="col-md-5">
+                        <input type="text" id="postalCode" name="postalCode" ng-model="vm.student.postalCode" class="form-control" required />
+                    </div>
+                    <span class="help-block has-error" ng-show="addEditStudentForm.postalCode.$dirty">
+                        <span ng-show="addEditStudentForm.postalCode.$error.required">Postal Code is required.</span>
+                    </span>
+                </div>
+                <div class="form-group" ng-class="{'has-error':addEditStudentForm.province.$invalid && addEditStudentForm.province.$dirty}">
+                    <label for="province" class="control-label col-md-2">Province</label>
+                    <div class="col-md-5">
+                        <input type="text" id="province" name="province" ng-model="vm.student.province" class="form-control" required />
+                    </div>
+                    <span class="help-block has-error" ng-show="addEditStudentForm.province.$dirty">
+                        <span ng-show="addEditStudentForm.province.$error.required">Province is required.</span>
+                    </span>
+                </div>
+                <div class="form-group" ng-class="{'has-error':addEditStudentForm.country.$invalid && addEditStudentForm.country.$dirty}">
+                    <label for="country" class="control-label col-md-2">Country</label>
+                    <div class="col-md-5">
+                        <input type="text" id="country" name="country" ng-model="vm.student.country" class="form-control" required />
+                    </div>
+                    <span class="help-block has-error" ng-show="addEditStudentForm.country.$dirty">
+                        <span ng-show="addEditStudentForm.country.$error.required">Country is required.</span>
+                    </span>
+                </div>
+                <div class="form-group" ng-class="{'has-error':addEditStudentForm.email.$invalid && addEditStudentForm.email.$dirty}">
+                    <label for="email" class="control-label col-md-2">Email</label>
+                    <div class="col-md-5">
+                        <input type="email" id="email" name="email" ng-model="vm.student.email" class="form-control" />
+                    </div>
+                    <span class="help-block has-error" ng-show="addEditStudentForm.email.$dirty">
+                        <span ng-show="addEditStudentForm.email.$error.email">Email format is invalid.</span>
+                    </span>
+                </div>
+                <div class="form-group" ng-class="{'has-error':addEditStudentForm.website.$invalid && addEditStudentForm.website.$dirty}">
+                    <label for="website" class="control-label col-md-2">Website</label>
+                    <div class="col-md-5">
+                        <input type="url" id="website" name="website" ng-model="vm.student.website" class="form-control" overwrite-url />
+                    </div>
+                    <span class="help-block has-error" ng-show="addEditStudentForm.website.$dirty">
+                        <span ng-show="addEditStudentForm.website.$error.url">Website format is invalid.</span>
+                    </span>
+                </div>
+                <div class="form-group" ng-class="{'has-error':addEditStudentForm.phone.$invalid && addEditStudentForm.phone.$dirty}">
+                    <label for="phone" class="control-label col-md-2">Phone</label>
+                    <div class="col-md-5">
+                        <input type="tel" id="phone" name="phone" ng-model="vm.student.phone" class="form-control" phone-number />
+                    </div>
+                    <span class="help-block has-error" ng-show="addEditStudentForm.phone.$dirty">
+                        <span ng-show="addEditStudentForm.phone.$error.phoneNumber">Phone format is invalid (ex. 123-456-7890).</span>
+                    </span>
+                </div>
+                <div class="form-group" ng-class="{'has-error':addEditStudentForm.commentDetails.$invalid && addEditStudentForm.commentDetails.$dirty}">
+                    <div class="col-md-7 text-right">
+                        <button class="btn btn-warning" ng-click="vm.reset()" ng-disabled="addEditStudentForm.$pristine">Reset</button>
+                        <!--<button class="btn btn-success" ng-click="vm.update()" ng-show="vm.student.id" ng-disabled="addEditStudentForm.$invalid || addEditStudentForm.$pristine">Update</button>-->
+                        <button class="btn btn-success" ng-click="vm.process()" ng-disabled="vm.newAdded || addEditStudentForm.$invalid || addEditStudentForm.$pristine">{{vm.btnText}}</button>
+                    </div>
+                </div>
+            </form>
+            <p><a href="/students/{{vm.pageNumber}}">Back to Students</a></p>
+            <div class="row">
+                <div ng-include="'/PartialViews/_MessageError.html'"></div>
+            </div>
+        </div>
+    </div>
+</div>

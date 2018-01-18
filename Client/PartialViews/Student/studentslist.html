@@ -1,0 +1,81 @@
+﻿<div ng-controller="studentsListCtrl as vm">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Student Information
+                <img src="/Content/images/loading.gif" alt="Loading..." ng-show="vm.isProcessing" id="loading-icon" />
+            </h2>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="filterBy" class="control-label col-md-2">Filter By (Any Column)</label>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" id="filterBy" ng-model="vm.filterBy" placeholder="Toronto">
+                    </div>
+                    <label for="sortBy" class="control-label col-md-1">Sort By</label>
+                    <div class="col-md-2">
+                        <select id="sortBy" class="form-control" ng-model="vm.sortBy">
+                            <option value="">[--Default--] </option>
+                            <option value="firstName">First Name</option>
+                            <option value="lastName">Last Name</option>
+                            <option value="city">City</option>
+                            <option value="province">Province</option>
+                            <option value="country">Country</option>
+                        </select>
+                    </div>
+                    <div class="col-md-1">
+                        <strong>Desc:</strong>
+                        <input type="checkbox" ng-model="vm.sortByDescding" />
+                    </div>
+                    <div class="col-md-3">
+                        <button type="button" class="btn btn-primary" ng-click="vm.refreshData()">Refresh</button>
+                        <a href="/student/-1" class="btn btn-success">Add New Student</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <!--<strong>vm.masterList:</strong> {{vm.masterList.length}}<br />
+        <strong>vm.filteredList:</strong> {{vm.filteredList.length}}<br />
+        <strong>Current Page:</strong> {{vm.pagination.currentPage}}<br />
+        <strong>Entry Limit:</strong> {{vm.pagination.entryLimit}}<br />-->
+        <table class="table table-striped table-bordered table-condensed table-hover table-responsive">
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>Postal Code</th>
+                <th>Province</th>
+                <th>Country</th>
+                <th>Email</th>
+                <th>Website</th>
+                <th>Phone</th>
+                <th>Action</th>
+            </tr>
+            <tr ng-repeat="item in vm.filteredList = vm.masterList | filter:vm.filterBy | orderBy:vm.sortBy:vm.sortByDescding | startFrom:(vm.pagination.currentPage - 1) * vm.pagination.entryLimit | limitTo:vm.pagination.entryLimit">
+                <td>{{item.id}}</td>
+                <td>{{item.firstName}}</td>
+                <td>{{item.lastName}}</td>
+                <td>{{item.address}}</td>
+                <td>{{item.city}}</td>
+                <td>{{item.postalCode}}</td>
+                <td>{{item.province}}</td>
+                <td>{{item.country}}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.website}}</td>
+                <td>{{item.phone}}</td>
+                <td class="text-center">
+                    <a ng-href="/student/{{item.id}}/{{vm.pagination.currentPage}}" href="#" class="btn btn-sm btn-success"><span class="glyphicon glyphicon-pencil"></span></a>
+                    <button type="button" class="btn btn-sm btn-danger" ng-click="vm.removeStudent($event, item.id)"><span class="glyphicon glyphicon-remove"></span></button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="row">
+        <div ng-include="'/PartialViews/_Pager.html'"></div>
+    </div>
+    <div class="row">
+        <div ng-include="'/PartialViews/_MessageError.html'"></div>
+    </div>
+</div>

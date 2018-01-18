@@ -1,0 +1,6 @@
+C:\Dev\Samples\WebAPIAngularExample\Client\bin\Client.dll.config
+C:\Dev\Samples\WebAPIAngularExample\Client\bin\Client.dll
+C:\Dev\Samples\WebAPIAngularExample\Client\bin\Client.pdb
+C:\Dev\Samples\WebAPIAngularExample\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+C:\Dev\Samples\WebAPIAngularExample\Client\obj\Debug\Client.dll
+C:\Dev\Samples\WebAPIAngularExample\Client\obj\Debug\Client.pdb

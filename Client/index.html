@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Sample</title>
+
+    <!-- Libraries -->
+    <script src="/scripts/jquery-3.1.1.min.js"></script>
+    <script src="/scripts/angular/angular.min.js"></script>
+    <script src="/scripts/angular/angular-animate.min.js"></script>
+    <script src="/scripts/angular/angular-route.min.js"></script>
+    <script src="/scripts/angular/angular-resource.min.js"></script>
+    <script src="/scripts/angular/angular-sanitize.min.js"></script>
+    <script src="/scripts/angular/angular-ui-router.js"></script>
+    <script src="/scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+
+    <script src="/scripts/bootstrap.min.js"></script>
+    <script src="/scripts/toastr.js"></script>
+
+    <link href="/content/bootstrap.min.css" rel="stylesheet">
+    <link href="/content/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="/content/bootstrap-theme.min.css" rel="stylesheet">
+
+    <!-- Custom -->
+    <script src="/scripts/custom/prototype-functions.js"></script>
+    <script src="/scripts/custom/shared-functions-and-variables.js"></script>
+
+    <link href="/content/custom/site.css" rel="stylesheet" />
+    <link href="/content/custom/custom-styles.css" rel="stylesheet" />
+
+    <!--General-->
+    <script src="/scripts/custom/angular/app.js"></script>
+    <script src="/scripts/custom/angular/common.functions.js"></script>
+    <script src="/scripts/custom/angular/commonNgFunctionsCtrl.js"></script>
+    <script src="/scripts/custom/angular/my-directives.js"></script>
+    <script src="/scripts/custom/angular/webApiResources.js"></script>
+
+    <!--Student-->
+    <script src="/scripts/custom/angular/mainCtrl.js"></script>
+    <script src="/scripts/custom/angular/studentsListCtrl.js"></script>
+    <script src="/scripts/custom/angular/addEditStudentCtrl.js"></script>
+
+    <base href="/" />
+</head>
+
+
+<body ng-app="sample">
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Sample Project</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="students">Students</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Nav header</li>
+                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Menu 2.1</a></li>
+                    <li class="active"><a href="#">Menu 2.2 <span class="sr-only">(current)</span></a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+
+    <div class="container" ng-controller="mainCtrl">
+
+        <div ng-view></div>
+
+        <hr />
+
+        <pre>$location.path() = {{$location.path()}}</pre>
+        <pre>$route.current.templateUrl = {{$route.current.templateUrl}}</pre>
+        <pre>$route.current.params = {{$route.current.params}}</pre>
+        <pre>$routeParams = {{$routeParams}}</pre>
+
+    </div>
+    <!-- /container -->
+</body>
+
+</html>

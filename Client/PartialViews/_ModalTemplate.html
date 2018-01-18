@@ -1,0 +1,11 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title">{{modalTitle}}</h3>
+</div>
+<div class="modal-body">
+    <p class="caption large">{{modalHeading}}</p>
+    <div class="{{cssClass}}"><span ng-bind-html="modalBody" ng-show="modalBody"></span></div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+</div>

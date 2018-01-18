@@ -1,0 +1,35 @@
+﻿<div ng-if="vm.pagination.totalItems > 0">
+    <p class="pull-right bold-text">
+        Items per page: {{vm.itemsPerPage}}
+
+        <select class="form-control" ng-init="vm.itemsPerPage = vm.pageOptions[0]"
+            ng-model="vm.itemsPerPage"
+            ng-options="value for value in vm.pageOptions">
+        </select>
+
+    </p>
+    <!--<p>
+        <span class="alert alert-info well-sm">Total: {{vm.pagination.totalItems()}}</span>
+        <span class="alert alert-warning well-sm">Page: {{vm.pagination.currentPage}} of {{vm.pagination.numPages()}}</span></p>
+        <ul uib-pagination total-items="vm.pagination.totalItems()"
+            items-per-page="vm.pagination.itemsEachPage"
+            ng-model="vm.pagination.currentPage"
+            current-page="vm.pagination.currentPage"
+            boundary-links="true"
+            max-size="15">
+    </ul>-->
+
+    <p><span class="alert alert-info well-sm">Total: {{vm.pagination.totalItems}}</span> <span class="alert alert-warning well-sm">Page: {{vm.pagination.currentPage}} of {{vm.pagination.noOfPages}}</span></p>
+    <ul uib-pagination total-items="vm.pagination.totalItems"
+        items-per-page="vm.pagination.entryLimit"
+        current-page="vm.pagination.currentPage"
+        boundary-links="true"
+        max-size="15"
+        ng-model="vm.pagination.currentPage">
+    </ul>
+</div>
+<div ng-if="vm.pagination.totalItems == 0">
+    <p class="alert alert-danger bold-text text-center">
+        There are no items.
+    </p>
+</div>
