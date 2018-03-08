@@ -54,3 +54,4 @@ C:\Dev\Samples\WebAPIAngularExample\WebAPI\bin\zh-Hant\System.Spatial.resources.
 C:\Dev\Samples\WebAPIAngularExample\WebAPI\obj\Debug\WebAPI.csprojResolveAssemblyReference.cache
 C:\Dev\Samples\WebAPIAngularExample\WebAPI\obj\Debug\WebAPI.dll
 C:\Dev\Samples\WebAPIAngularExample\WebAPI\obj\Debug\WebAPI.pdb
+C:\Dev\Samples\WebAPIAngularExample\WebAPI\obj\Debug\WebAPI.csproj.CoreCompileInputs.cache

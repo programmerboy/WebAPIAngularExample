@@ -4,3 +4,4 @@ C:\Dev\Samples\WebAPIAngularExample\Client\bin\Client.pdb
 C:\Dev\Samples\WebAPIAngularExample\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
 C:\Dev\Samples\WebAPIAngularExample\Client\obj\Debug\Client.dll
 C:\Dev\Samples\WebAPIAngularExample\Client\obj\Debug\Client.pdb
+C:\Dev\Samples\WebAPIAngularExample\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache

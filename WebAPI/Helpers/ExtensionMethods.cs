@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Web;
 
 namespace WebAPI.Helpers
@@ -253,6 +254,23 @@ namespace WebAPI.Helpers
             changed = sb.ToString();
 
             return blnAtLeastOneDifferent;
+        }
+
+        public static Tuple<bool, string, List<string>> IsMatch(this string expression, string pattern)
+        {
+            var matchValue = String.Empty;
+            var lstMatches = new List<string>();
+            var r = new Regex(pattern, RegexOptions.IgnoreCase);
+            var matches = r.Matches(expression);
+
+            foreach (Match match in matches)
+            {
+                matchValue = match.Value;
+                lstMatches.Add(matchValue);
+            }
+
+            var isMatch = matches.Count > 0;
+            return Tuple.Create(isMatch, matchValue, lstMatches);
         }
 
     }
